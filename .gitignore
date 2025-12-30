@@ -1,0 +1,87 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Production builds
+dist/
+build/
+*.tsbuildinfo
+
+# Uploads directory (temporary files)
+server/uploads/
+uploads/
+
+# Model files (CRITICAL: large files, manage separately via Git LFS or external storage)
+*.keras
+*.h5
+*.pb
+*.ckpt
+*.pth
+*.pt
+*.onnx
+*.tflite
+saved_model/
+checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+pip-log.txt
+*.egg-info/
+.pytest_cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+coverage/
+.nyc_output
+htmlcov/
+.coverage
+
+# Logs
+logs/
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Misc
+.cache/
+tmp/
+temp/
+.next/
+out/
+
+# Artifacts directory (for this project's documentation)
+# Uncomment if you don't want to commit artifacts
+# C:\Users\Zyrex\.gemini/
+
+# Local documentation (auto-generated)
+CRITICAL_FIX_APPLIED.md
+UPDATE_FOOTER_CAUSES.md
+
