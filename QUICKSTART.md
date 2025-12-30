@@ -16,7 +16,7 @@ npm install
 
 ### 3. Install Python Dependencies
 ```cmd
-cd "d:\Dokumen\Anti Gravity\Proyek Sains Data\Deteksi Penyakit Daun Padi\server"
+cd "d:\Dokumen\Anti Gravity\Proyek Sains Data\Deteksi Penyakit Daun Padi"
 pip install -r requirements.txt
 ```
 
@@ -91,10 +91,10 @@ Deteksi Penyakit Daun Padi/
 ## Quick Test
 
 1. Go to http://localhost:5173
-2. Click "Start Detection Now"
-3. Upload a rice leaf image
-4. Click "Analyze Image"
-5. View disease detection result!
+2. Navigate to "Deteksi" page
+3. Upload a rice leaf image (drag & drop or browse)
+4. Click "🔍 Analisis Gambar"
+5. View disease detection result with bilingual names!
 
 ---
 

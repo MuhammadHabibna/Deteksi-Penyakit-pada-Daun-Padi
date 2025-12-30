@@ -5,24 +5,25 @@ Modern, stateless web application for Rice Leaf Disease Detection using AI. Buil
 ## Features
 
 - ✨ **Instant Detection**: No login required, privacy-focused
-- 🎯 **High Accuracy**: 95.2% test accuracy on 15,023+ verified images
-- 📸 **Multiple Input Methods**: Upload images or use camera
+- 🎯 **High Accuracy**: 97.52% test accuracy on 15,023+ verified images
+- 📤 **Simple Upload**: Drag & drop or browse to upload images
 - 🔒 **Privacy First**: Images processed temporarily and immediately deleted
-- 💡 **Treatment Advice**: Get disease-specific recommendations
+- 💡 **Treatment Advice**: Get disease-specific recommendations with causes
+- 🌍 **Bilingual Support**: Disease names in Indonesian and English
 - 📊 **Model Transparency**: View training statistics and performance
 
 ## Disease Classes Detected
 
-1. Bacterial Leaf Blight
-2. Brown Spot
-3. Healthy
-4. Leaf Blast
-5. Leaf Scald
-6. Narrow Brown Spot
-7. Neck Blast
-8. Rice Hispa
-9. Sheath Blight
-10. Tungro
+1. Hawar Daun Bakteri (Bacterial Leaf Blight)
+2. Bercak Coklat (Brown Spot)
+3. Sehat (Healthy)
+4. Blas Daun (Leaf Blast)
+5. Hawar Pelepah Daun (Leaf Scald)
+6. Bercak Coklat Sempit (Narrow Brown Spot)
+7. Blas Leher (Neck Blast)
+8. Hispa Padi (Rice Hispa)
+9. Hawar Pelepah (Sheath Blight)
+10. Tungro (Tungro)
 
 ## Tech Stack
 
@@ -71,7 +72,7 @@ npm install
 ### 3. Install Python Dependencies
 
 ```bash
-# Make sure you're in the server directory
+# From the project root directory
 pip install -r requirements.txt
 ```
 
@@ -194,21 +195,24 @@ Health check endpoint.
 
 ## How It Works
 
-1. **Upload**: User uploads a rice leaf image via drag-drop or camera
+1. **Upload**: User uploads a rice leaf image via drag-drop or file browser
 2. **Processing**: Image is sent to Express backend via `/api/predict`
 3. **AI Inference**: Backend spawns Python process to run `predict.py`
-4. **Prediction**: Python loads the Keras model, preprocesses image, and returns JSON
-5. **Display**: Frontend shows disease name, confidence score, and advice
-6. **Cleanup**: Image is automatically deleted from server
+4. **Preprocessing**: Image is converted to RGB, resized to 224x224, converted to float32 (NO normalization - pixel values remain 0-255)
+5. **Prediction**: Python loads the Keras model, runs inference, and returns JSON with disease, confidence, causes, and advice
+6. **Display**: Frontend shows bilingual disease name, confidence score, causes, and treatment recommendations
+7. **Cleanup**: Image is automatically deleted from server
 
 ## Model Information
 
 - **Dataset**: 15,023 verified images
-- **Test Accuracy**: 95.2%
+- **Test Accuracy**: 97.52%
 - **Architecture**: Deep Convolutional Neural Network (CNN)
 - **Framework**: TensorFlow/Keras
 - **Input Size**: 224x224 RGB images
-- **Preprocessing**: Resize, normalize to [0, 1]
+- **Preprocessing**: CRITICAL - Resize to 224x224, convert to float32, NO normalization (pixel values 0-255)
+- **Classes**: 10 disease categories (hardcoded, indices 0-9)
+- **Output**: Disease name, confidence score, causes explanation, treatment advice
 
 ## Troubleshooting
 
