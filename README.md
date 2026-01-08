@@ -1,4 +1,4 @@
-# RiceGuard AI 🌾
+# RiceGuard AI
 
 Modern, stateless web application for Rice Leaf Disease Detection using AI. Built with React.js, Node.js/Express, and Python for AI inference.
 
