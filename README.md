@@ -40,7 +40,7 @@ Modern, stateless web application for Rice Leaf Disease Detection using AI. Buil
 - CORS enabled
 
 ### AI Integration
-- Python 3.x
+- Python 3.x.
 - TensorFlow/Keras for model inference
 - PIL for image preprocessing
 
